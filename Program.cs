@@ -6,6 +6,7 @@ namespace _1
     {
         static void Main(string[] args)
         {
+            int a;
             string s1 = DateTime.Now.ToString();
             string s2 = DateTime.Now.ToString("F");
           
