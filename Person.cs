@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _1
+namespace LR_5
 {
     class Person
     {
@@ -25,23 +25,8 @@ namespace _1
             this.PersonID = Person.id;
 
         }
-        public void SelectData(int b)
+        public virtual void SelectData(int b)
         {
-            switch (b)
-            {
-                case 0:
-                    Console.WriteLine($" Age: {Age}");
-                    break;
-                case 1:
-                    Console.WriteLine($" Weight: {Weight}");
-                    break;
-                case 2:
-                    Console.WriteLine($" Height: {Height}");
-                    break;
-                case 3:
-                    Console.WriteLine($" Id: {PersonID}");
-                    break;
-            }
 
         }
 
@@ -60,3 +45,4 @@ namespace _1
 
     }
 }
+
