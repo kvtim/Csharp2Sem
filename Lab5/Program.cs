@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace LR_5
 {
@@ -6,114 +6,114 @@ namespace LR_5
     {
         static void Main(string[] args)
         {
-            StudentSecialty person1 = new StudentSecialty(18, "Egor", "Shirko", 49, 205, 1,
-                faculty.KSIS, "IiTP", 90, 10.0, "Pizdische", 1000000, "C++");
-            StudentSecialty person2 = new StudentSecialty(20, "Petr", "Petrovich", 119, 167, 3,
-                 faculty.FRE, "Radiotexnik", 5, 2.3, "Brest", 100, "Radio");
+            StudentSecialty[] person = new StudentSecialty[3];
+            person[0] = new StudentSecialty(18, "Ignat", "Sidorov", 49, 205, 1,
+                faculty.KSIS, "IiTP", 90, 10.0, "Minsk", 1000000, "C++");
+            person[1] = new StudentSecialty(23, "Petr", "Ivanov", 123, 167, 3,
+                 faculty.FRE, "Radio Engineering", 5, 2.3, "Brest", 100, "Physics");
+            person[2] = new StudentSecialty(20, "Ivan", "Petrov", 119, 190, 4,
+                 faculty.FKP, "Computer Science", 10, 5.6, "Vitebsk", 777, "Physical Culture");
 
-            while (true)
+            for (int i = 0; i < person.Length;)
             {
-                Console.Write(" Select first student data: Name or Surname: ");
+                Console.Write($" Select {i + 1} student data: Name or Surname: ");
                 string StringData1 = Console.ReadLine();
-                person1.SelectData(StringData1);
-                Console.Write(" Select first student data: \n 0: Age; \n 1: Weight;" +
+                person[i].SelectData(StringData1);
+                Console.Write($"\n Select {i + 1} student data: \n 0: Age; \n 1: Weight;" +
                     " \n 2: Height; \n 3: Id; \n 4: Course; \n 5: Faculty; \n 6: Speciality;" +
                     " \n 7: Skipping hours; \n 8: Avarage mark; \n 9: Live place; \n 10: Study cost;" +
-                    " \n 11: Favorite subject; \n 12: All data of 1 person; " +
-                    " \n Your choice: ");
+                    $" \n 11: Favorite subject; \n 12: All data of {i + 1} person; " +
+                    " \n\n Your choice: ");
                 int IntData1 = Convert.ToInt32(Console.ReadLine());
-                person1.SelectData(IntData1);
-                Console.Write(" Go to next person? Yes or No: ");
-                string continuation = Console.ReadLine();
-                if (continuation == "Yes")
-                    break;
+                person[i].SelectData(IntData1);
+                if (i == person.Length - 1)
+                {
+                    Console.Write("\n Show more information about last student? Yes or No: ");
+                    string exit = Console.ReadLine();
+                    Console.WriteLine();
+                    if (exit == "No")
+                    {
+                        i++;
+                    }
+                }
+                else
+                {
+                    Console.Write("\n Go to next student? Yes or No: ");
+                    string continuation = Console.ReadLine();
+                    Console.WriteLine();
+                    if (continuation == "Yes")
+                        i++;
+                }
             }
 
-            while (true)
-            {
-                Console.Write(" Select second student data: Name or Surname: ");
-                string StringData2 = Console.ReadLine();
-                person1.SelectData(StringData2);
-                Console.Write(" Select second student data: \n 0: Age; \n 1: Weight;" +
-                    " \n 2: Height; \n 3: Id; \n 4: Course; \n 5: Faculty; \n 6: Speciality;" +
-                    " \n 7: Skipping hours; \n 8: Avarage mark; \n 9: Live place; \n 10: Study cost;" +
-                    " \n 11: Favorite subject; \n 12: All data of 2 person; " +
-                    " \n Your choice: ");
-                int IntData2 = Convert.ToInt32(Console.ReadLine());
-                person2.SelectData(IntData2);
-                Console.Write(" Go to sort? Yes or No: ");
-                string exit = Console.ReadLine();
-                if (exit == "Yes")
-                    break;
-            }
-
-            Console.Write(" Do you wont to sort students parametrs? Yes or No: ");
+            Console.Write(" Do you wont to sort students? Yes or No: ");
             string choice = Console.ReadLine();
 
             while (true)
             {
                 if (choice == "Yes")
                 {
-                    Console.Write(" Сhoose by what parameters to sort students: \n 1: Age; \n 2: Weight;" +
+                    Console.Write("\n Сhoose by what parameters to sort students: \n 1: Age; \n 2: Weight;" +
                     " \n 3: Height; \n 4: Course; \n 5: Skipping hours; " +
-                    " \n 6: Avarage mark; \n Your choice: ");
+                    " \n 6: Avarage mark; \n\n Your choice: ");
                     int sort = Convert.ToInt32(Console.ReadLine());
+
                     switch (sort)
                     {
                         case 1:
-                            if (StudentSecialty.Sort(person1.Age, person2.Age) == 2)
-                                Console.WriteLine($" Age of first student: {person1.Age}" +
-                                    $" \n Age of second student: {person2.Age}");
-                            else
-                                Console.WriteLine($" Age of second student: {person2.Age}" +
-                                    $" \n Age of first student: {person1.Age}");
+                            StudentSecialty.Sort(ref person, 1);
+                            for (int i = 0; i < person.Length; i++)
+                            {
+                                Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
+                                $"Student age: {person[i].Age}");
+                            }
                             break;
                         case 2:
-                            if (StudentSecialty.Sort(person1.Weight, person2.Weight) == 2)
-                                Console.WriteLine($" Weight of first student: {person1.Weight}" +
-                                    $" \n Weight of second student: {person2.Weight}");
-                            else
-                                Console.WriteLine($" Weight of second student: {person2.Weight}" +
-                                    $" \n Weight of first student: {person1.Weight}");
+                            StudentSecialty.Sort(ref person, 2);
+                            for (int i = 0; i < person.Length; i++)
+                            {
+                                Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
+                                $"Student weight: {person[i].Weight}");
+                            }
                             break;
                         case 3:
-                            if (StudentSecialty.Sort(person1.Height, person2.Height) == 2)
-                                Console.WriteLine($" Height of first student: {person1.Height}" +
-                                    $" \n Height of second student: {person2.Height}");
-                            else
-                                Console.WriteLine($" Height of second student: {person2.Height}" +
-                                    $" \n Height of first student: {person1.Height}");
+                            StudentSecialty.Sort(ref person, 3);
+                            for (int i = 0; i < person.Length; i++)
+                            {
+                                Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
+                                $"Student height: {person[i].Height}");
+                            }
                             break;
                         case 4:
-                            if (StudentSecialty.Sort(person1.Course, person2.Course) == 2)
-                                Console.WriteLine($" Course of first student: {person1.Course}" +
-                                    $" \n Course of second student: {person2.Course}");
-                            else
-                                Console.WriteLine($" Course of second student: {person2.Course}" +
-                                    $" \n Course of first student: {person1.Course}");
+                            StudentSecialty.Sort(ref person, 4);
+                            for (int i = 0; i < person.Length; i++)
+                            {
+                                Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
+                                $"Student course: {person[i].Course}");
+                            }
                             break;
                         case 5:
-                            if (StudentSecialty.Sort(person1.SkippingHours, person2.SkippingHours) == 2)
-                                Console.WriteLine($" Skipping hours of first student: {person1.SkippingHours}" +
-                                    $" \n Skipping hours of second student: {person2.SkippingHours}");
-                            else
-                                Console.WriteLine($" Skipping hours of second student: {person2.SkippingHours}" +
-                                    $" \n Skipping hours of first student: {person1.SkippingHours}");
+                            StudentSecialty.Sort(ref person, 5);
+                            for (int i = 0; i < person.Length; i++)
+                            {
+                                Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
+                                $"Student skipping hours: {person[i].SkippingHours}");
+                            }
                             break;
                         case 6:
-                            if (StudentSecialty.Sort(person1.AvarageMark, person2.AvarageMark) == 2)
-                                Console.WriteLine($" Avarage mark of first student: {person1.AvarageMark}" +
-                                    $" \n Avarage mark of second student: {person2.AvarageMark}");
-                            else
-                                Console.WriteLine($" Avarage mark of second student: {person2.AvarageMark}" +
-                                    $" \n Avarage mark of first student: {person1.AvarageMark}");
+                            StudentSecialty.Sort(ref person, 6);
+                            for (int i = 0; i < person.Length; i++)
+                            {
+                                Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
+                                $"Student avarage mark: {person[i].AvarageMark}");
+                            }
                             break;
                         default:
-                            Console.WriteLine(" Your choice isn't correct!");
+                            Console.WriteLine("\n Your choice isn't correct!");
                             break;
 
                     }
-                    Console.Write(" Sort by other parameters? Yes or No: ");
+                    Console.Write("\n Sort by other parameters? Yes or No: ");
 
                     if (Console.ReadLine() == "No")
                     {
@@ -124,7 +124,7 @@ namespace LR_5
                     break;
                 else
                 {
-                    Console.Write(" Required to enter Yes or No: ");
+                    Console.Write("\n Required to enter Yes or No: ");
                     choice = Console.ReadLine();
                 }
             }
