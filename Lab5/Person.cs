@@ -27,7 +27,21 @@ namespace LR_5
         }
         public virtual void SelectData(int b)
         {
-
+    switch (b)
+            {
+                case 0:
+                    Console.WriteLine($" Age: {Age}");
+                    break;
+                case 1:
+                    Console.WriteLine($" Weight: {Weight}");
+                    break;
+                case 2:
+                    Console.WriteLine($" Height: {Height}");
+                    break;
+                case 3:
+                    Console.WriteLine($" Id: {PersonID}");
+                    break;
+            }
         }
 
         public void SelectData(string a)
