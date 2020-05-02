@@ -15,7 +15,7 @@ namespace LR_5
             this.Course = course;
             this.Faculty = faculty;
         }
-        public static void Sort(ref StudentSecialty[] student, int parameter)
+        public static void Sort(StudentSecialty[] student, int parameter)
         {
             for (int i = 0; i < student.Length; i++)
             {
