@@ -61,7 +61,7 @@ namespace LR_5
                     switch (sort)
                     {
                         case 1:
-                            StudentSecialty.Sort(ref person, 1);
+                            StudentSecialty.Sort(person, 1);
                             for (int i = 0; i < person.Length; i++)
                             {
                                 Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
@@ -69,7 +69,7 @@ namespace LR_5
                             }
                             break;
                         case 2:
-                            StudentSecialty.Sort(ref person, 2);
+                            StudentSecialty.Sort(person, 2);
                             for (int i = 0; i < person.Length; i++)
                             {
                                 Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
@@ -77,7 +77,7 @@ namespace LR_5
                             }
                             break;
                         case 3:
-                            StudentSecialty.Sort(ref person, 3);
+                            StudentSecialty.Sort(person, 3);
                             for (int i = 0; i < person.Length; i++)
                             {
                                 Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
@@ -85,7 +85,7 @@ namespace LR_5
                             }
                             break;
                         case 4:
-                            StudentSecialty.Sort(ref person, 4);
+                            StudentSecialty.Sort(person, 4);
                             for (int i = 0; i < person.Length; i++)
                             {
                                 Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
@@ -93,7 +93,7 @@ namespace LR_5
                             }
                             break;
                         case 5:
-                            StudentSecialty.Sort(ref person, 5);
+                            StudentSecialty.Sort(person, 5);
                             for (int i = 0; i < person.Length; i++)
                             {
                                 Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
@@ -101,7 +101,7 @@ namespace LR_5
                             }
                             break;
                         case 6:
-                            StudentSecialty.Sort(ref person, 6);
+                            StudentSecialty.Sort(person, 6);
                             for (int i = 0; i < person.Length; i++)
                             {
                                 Console.WriteLine($"\n {i + 1}: {person[i].Name} {person[i].Surname} \n " +
