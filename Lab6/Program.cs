@@ -14,71 +14,71 @@ namespace LR_5
             person[2] = new StudentSecialty(20, "Ivan", "Petrov", 119, 190, 4,
                  faculty.FKP, "MiKPRS", 10, 5.6, "Vitebsk", 777, "Physical Culture");
 
-            //for (int i = 0; i < person.Length;)
-            //{
-            //    Console.Write($" Select {i + 1} student data: Name or Surname: ");
-            //    string stringData = Console.ReadLine();
-            //    if (stringData != "Name" && stringData != "Surname")
-            //    {
-            //        Console.WriteLine("\n Your choice isn't correct!");
-            //        continue;
-            //    }
-            //    person[i].SelectData(stringData);
-            //    while (true)
-            //    {
-            //        Console.Write($"\n Select {i + 1} student data: \n 0: Age; \n 1: Weight;" +
-            //    " \n 2: Height; \n 3: Id; \n 4: Course; \n 5: Faculty; \n 6: Speciality;" +
-            //    " \n 7: Skipping hours; \n 8: Avarage mark; \n 9: Live place; \n 10: Study cost;" +
-            //    $" \n 11: Favorite subject; \n 12: All data of {i + 1} person; " +
-            //    " \n\n Your choice: ");
-            //        int intData = Convert.ToInt32(Console.ReadLine());
-            //        person[i].SelectData(intData);
-            //        if (intData != 0 && intData != 1 && intData != 2 && intData != 3 && intData != 4 && intData != 5 && intData != 6 &&
-            //            intData != 7 && intData != 8 && intData != 9 && intData != 10 && intData != 11 && intData != 12)
-            //        {
-            //            Console.WriteLine("\n Your choice isn't correct!");
-            //            continue;
-            //        }
-            //        break;
-            //    }
-            //    if (i == person.Length - 1)
-            //    {
-            //        while (true)
-            //        {
-            //            Console.Write("\n Show more information about last student? Yes or No: ");
-            //            string exit = Console.ReadLine();
-            //            if (exit != "No" && exit != "Yes")
-            //            {
-            //                Console.WriteLine("\n Your choice isn't correct!");
-            //                continue;
-            //            }
-            //            Console.WriteLine();
-            //            if (exit == "No")
-            //            {
-            //                i++;
-            //            }
-            //            break;
-            //        }
+            for (int i = 0; i < person.Length;)
+            {
+                Console.Write($" Select {i + 1} student data: Name or Surname: ");
+                string stringData = Console.ReadLine();
+                if (stringData != "Name" && stringData != "Surname")
+                {
+                    Console.WriteLine("\n Your choice isn't correct!");
+                    continue;
+                }
+                person[i].SelectData(stringData);
+                while (true)
+                {
+                    Console.Write($"\n Select {i + 1} student data: \n 0: Age; \n 1: Weight;" +
+                " \n 2: Height; \n 3: Id; \n 4: Course; \n 5: Faculty; \n 6: Speciality;" +
+                " \n 7: Skipping hours; \n 8: Avarage mark; \n 9: Live place; \n 10: Study cost;" +
+                $" \n 11: Favorite subject; \n 12: All data of {i + 1} person; " +
+                " \n\n Your choice: ");
+                    int intData = Convert.ToInt32(Console.ReadLine());
+                    person[i].SelectData(intData);
+                    if (intData != 0 && intData != 1 && intData != 2 && intData != 3 && intData != 4 && intData != 5 && intData != 6 &&
+                        intData != 7 && intData != 8 && intData != 9 && intData != 10 && intData != 11 && intData != 12)
+                    {
+                        Console.WriteLine("\n Your choice isn't correct!");
+                        continue;
+                    }
+                    break;
+                }
+                if (i == person.Length - 1)
+                {
+                    while (true)
+                    {
+                        Console.Write("\n Show more information about last student? Yes or No: ");
+                        string exit = Console.ReadLine();
+                        if (exit != "No" && exit != "Yes")
+                        {
+                            Console.WriteLine("\n Your choice isn't correct!");
+                            continue;
+                        }
+                        Console.WriteLine();
+                        if (exit == "No")
+                        {
+                            i++;
+                        }
+                        break;
+                    }
 
-            //    }
-            //    else
-            //    {
-            //        while (true)
-            //        {
-            //            Console.Write("\n Go to next student? Yes or No: ");
-            //            string continuation = Console.ReadLine();
-            //            if (continuation != "No" && continuation != "Yes")
-            //            {
-            //                Console.WriteLine("\n Your choice isn't correct!");
-            //                continue;
-            //            }
-            //            Console.WriteLine();
-            //            if (continuation == "Yes")
-            //                i++;
-            //            break;
-            //        }
-            //    }
-            //}
+                }
+                else
+                {
+                    while (true)
+                    {
+                        Console.Write("\n Go to next student? Yes or No: ");
+                        string continuation = Console.ReadLine();
+                        if (continuation != "No" && continuation != "Yes")
+                        {
+                            Console.WriteLine("\n Your choice isn't correct!");
+                            continue;
+                        }
+                        Console.WriteLine();
+                        if (continuation == "Yes")
+                            i++;
+                        break;
+                    }
+                }
+            }
 
             Console.Write(" Do you wont to sort students? Yes or No: ");
             string choice = Console.ReadLine();
