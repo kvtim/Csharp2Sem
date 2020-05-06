@@ -55,7 +55,7 @@ namespace LR_5
                     Console.WriteLine($" Name: {Name}");
                     break;
             }
-        }
+        } 
 
     }
 }
