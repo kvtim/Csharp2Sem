@@ -1,0 +1,11 @@
+D:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.csprojAssemblyReference.cache
+D:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.csproj.CoreCompileInputs.cache
+D:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.AssemblyInfoInputs.cache
+D:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.AssemblyInfo.cs
+D:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.deps.json
+D:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.runtimeconfig.json
+D:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.runtimeconfig.dev.json
+D:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.dll
+D:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.pdb
+D:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.dll
+D:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.pdb
