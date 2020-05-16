@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace LR_5
 {
@@ -8,12 +8,27 @@ namespace LR_5
         {
             StudentSecialty[] person = new StudentSecialty[3];
             person[0] = new StudentSecialty(18, "Ignat", "Sidorov", 49, 205, 4,
-                faculty.KSIS, "IiTP", 90, 10.0, "Minsk", 1000000, "C#");
+                Faculty.KSIS, "IiTP", 90, 10.0, "Minsk", 1000000, "C#");
             person[1] = new StudentSecialty(23, "Petr", "Ivanov", 123, 167, 1,
-                 faculty.FRE, "Radio Engineering", 5, 2.3, "Brest", 100, "Physics");
+                 Faculty.FRE, "Radio Engineering", 5, 2.3, "Brest", 100, "Physics");
             person[2] = new StudentSecialty(20, "Ivan", "Petrov", 119, 190, 4,
-                 faculty.FKP, "MiKPRS", 10, 5.6, "Vitebsk", 777, "Physical Culture");
+                 Faculty.FKP, "MiKPRS", 10, 5.6, "Vitebsk", 777, "Physical Culture");
 
+            ShowInfo(person);
+
+            Sort(person);
+
+            CheckTheSameCourse(person);
+
+            PositiveAvaraveMark(person);
+
+            Transfer(person);
+
+            Console.Write("\n Press eny key to exit... ");
+            Console.ReadKey();
+        }
+        static void ShowInfo(StudentSecialty[] person)
+        {
             for (int i = 0; i < person.Length;)
             {
                 Console.Write($" Select {i + 1} student data: Name or Surname: ");
@@ -79,7 +94,9 @@ namespace LR_5
                     }
                 }
             }
-
+        }
+        static void Sort(StudentSecialty[] person)
+        {
             Console.Write(" Do you wont to sort students? Yes or No: ");
             string choice = Console.ReadLine();
 
@@ -177,11 +194,13 @@ namespace LR_5
                     choice = Console.ReadLine();
                 }
             }
-
+        }
+        static void CheckTheSameCourse(StudentSecialty[] person)
+        {
             while (true)
             {
                 Console.Write("\n Do you want to check if there are students from the same course? Yes or No: ");
-                choice = Console.ReadLine();
+                string choice = Console.ReadLine();
 
                 if (choice == "No")
                     break;
@@ -207,11 +226,13 @@ namespace LR_5
                 }
                 Console.WriteLine("\n Your choice isn't correct!");
             }
-
+        }
+        static void PositiveAvaraveMark(StudentSecialty[] person)
+        {
             while (true)
             {
                 Console.Write("\n Do you want to show students with positive avarage mark? Yes or No: ");
-                choice = Console.ReadLine();
+                string choice = Console.ReadLine();
                 if (choice != "Yes" && choice != "No")
                 {
                     Console.WriteLine("\n Your choice isn't correct!");
@@ -245,11 +266,13 @@ namespace LR_5
                 }
                 break;
             }
-
+        }
+        static void Transfer(StudentSecialty[] person)
+        {
             while (true)
             {
-                Console.Write("\n Do you want to transfer a student to another faculty? Yes or No: ");
-                choice = Console.ReadLine();
+                Console.Write("\n Do you want to transfer a student to another Faculty? Yes or No: ");
+                string choice = Console.ReadLine();
                 if (choice != "Yes" && choice != "No")
                 {
                     Console.WriteLine("\n Your choice isn't correct!");
@@ -262,8 +285,9 @@ namespace LR_5
                 {
                     if (choice == "Yes")
                     {
-                        int number, transfer, speciality = 100;
-                        Console.WriteLine("\n Select the student you want to transfer to another faculty: ");
+                        int number = 100, transfer = 100, newSpeciality = 100;
+
+                        Console.WriteLine("\n Select the student you want to transfer to another Faculty: ");
 
                         while (true)
                         {
@@ -283,94 +307,9 @@ namespace LR_5
                             break;
                         }
 
-                        while (true)
-                        {
-                            Console.Write("\n Choose a faculty for this student:\n 1: KSIS,\n 2: FITY,\n 3: IEF,\n 4: FKP,\n 5: FRE" +
-                          "\n\n You choice: ");
-                            transfer = Convert.ToInt32(Console.ReadLine());
-                            if (transfer < 1 || transfer > 5)
-                            {
-                                Console.WriteLine("\n Your choice isn't correct!");
-                                continue;
-                            }
-                            break;
-                        }
+                        FacultyTransfer(person, ref transfer, ref number);
 
-                        person[number - 1].TransferFaculty(transfer);
-
-                        Console.WriteLine("\n Now choose a new specialty for this student: ");
-                        switch (transfer)
-                        {
-                            case 1:
-                                while (true)
-                                {
-                                    Console.Write(" 1: POIT,\n 2: IiTP,\n 3: VMSiS,\n 4: EVS \n You choice: ");
-                                    speciality = Convert.ToInt32(Console.ReadLine());
-                                    if (speciality < 1 || speciality > 5)
-                                    {
-                                        Console.WriteLine("\n Your choice isn't correct!\n");
-                                        continue;
-                                    }
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                while (true)
-                                {
-                                    Console.Write(" 1: ASOI,\n 2: II,\n 3: ITiYTS,\n 4: PE, \n 5: Game Industry \n You choice: ");
-                                    speciality = Convert.ToInt32(Console.ReadLine());
-                                    if (speciality < 1 || speciality > 5)
-                                    {
-                                        Console.WriteLine("\n Your choice isn't correct!\n");
-                                        continue;
-                                    }
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                while (true)
-                                {
-                                    Console.Write(" 1: Logistics,\n 2: Economy,\n 3: Business,\n 4: Marketing \n You choice: ");
-                                    speciality = Convert.ToInt32(Console.ReadLine());
-                                    if (speciality < 1 || speciality > 4)
-                                    {
-                                        Console.WriteLine("\n Your choice isn't correct!\n");
-                                        continue;
-                                    }
-                                    break;
-                                }
-                                break;
-                            case 4:
-                                while (true)
-                                {
-                                    Console.Write(" 1: I-POiT,\n 2: ISiTOPB,\n 3: Med Electronic,\n 4: MiKPRS, \n 5: PMS,\n" +
-                                        " 6: ESB,\n You choice: ");
-                                    speciality = Convert.ToInt32(Console.ReadLine());
-                                    if (speciality < 1 || speciality > 6)
-                                    {
-                                        Console.WriteLine("\n Your choice isn't correct!\n");
-                                        continue;
-                                    }
-                                    break;
-                                }
-                                break;
-                            case 5:
-                                while (true)
-                                {
-                                    Console.Write(" 1: KIS,\n 2: NiNE,\n 3: Radio Informatics,\n 4: Radio Engineering, " +
-                                         "\n 5: Electronic Systems,\n 6: RZI,\n 7: Professional study \n\n You choice: ");
-                                    speciality = Convert.ToInt32(Console.ReadLine());
-                                    if (speciality < 1 || speciality > 7)
-                                    {
-                                        Console.WriteLine("\n Your choice isn't correct!\n");
-                                        continue;
-                                    }
-                                    break;
-                                }
-                                break;
-                        }
-
-                        person[number - 1].TransferSpeciality(speciality);
+                        SpecialityTransfer(person, ref transfer, ref number, newSpeciality);
 
                         Console.WriteLine("\n This student after transform:");
                         Console.WriteLine($"\n {person[number - 1].Name} {person[number - 1].Surname}\n" +
@@ -394,8 +333,117 @@ namespace LR_5
                 }
                 break;
             }
-            Console.Write("\n Press eny key to exit... ");
-            Console.ReadKey();
+        }
+        static void FacultyTransfer(StudentSecialty[] person, ref int transfer, ref int number)
+        {
+            Faculty newFaculty;
+
+            while (true)
+            {
+                Console.Write("\n Choose a Faculty for this student:\n 1: KSIS,\n 2: FITY,\n 3: IEF,\n 4: FKP,\n 5: FRE" +
+              "\n\n You choice: ");
+                transfer = Convert.ToInt32(Console.ReadLine());
+                switch (transfer)
+                {
+                    case 1:
+                        newFaculty = Faculty.KSIS;
+                        break;
+                    case 2:
+                        newFaculty = Faculty.FITY;
+                        break;
+                    case 3:
+                        newFaculty = Faculty.IEF;
+                        break;
+                    case 4:
+                        newFaculty = Faculty.FKP;
+                        break;
+                    case 5:
+                        newFaculty = Faculty.FRE;
+                        break;
+                    default:
+                        Console.WriteLine("\n Your choice isn't correct!");
+                        continue;
+                }
+                break;
+            }
+
+            person[number - 1].TransferFaculty(newFaculty);
+        }
+        static void SpecialityTransfer(StudentSecialty[] person, ref int transfer, ref int number, int newSpeciality)
+        {
+            Console.WriteLine("\n Now choose a new specialty for this student: ");
+            switch (transfer)
+            {
+                case 1:
+                    while (true)
+                    {
+                        Console.Write(" 1: POIT,\n 2: IiTP,\n 3: VMSiS,\n 4: EVS \n You choice: ");
+                        newSpeciality = Convert.ToInt32(Console.ReadLine());
+                        if (newSpeciality < 1 || newSpeciality > 5)
+                        {
+                            Console.WriteLine("\n Your choice isn't correct!\n");
+                            continue;
+                        }
+                        break;
+                    }
+                    break;
+                case 2:
+                    while (true)
+                    {
+                        Console.Write(" 1: ASOI,\n 2: II,\n 3: ITiYTS,\n 4: PE, \n 5: Game Industry \n You choice: ");
+                        newSpeciality = Convert.ToInt32(Console.ReadLine());
+                        if (newSpeciality < 1 || newSpeciality > 5)
+                        {
+                            Console.WriteLine("\n Your choice isn't correct!\n");
+                            continue;
+                        }
+                        break;
+                    }
+                    break;
+                case 3:
+                    while (true)
+                    {
+                        Console.Write(" 1: Logistics,\n 2: Economy,\n 3: Business,\n 4: Marketing \n You choice: ");
+                        newSpeciality = Convert.ToInt32(Console.ReadLine());
+                        if (newSpeciality < 1 || newSpeciality > 4)
+                        {
+                            Console.WriteLine("\n Your choice isn't correct!\n");
+                            continue;
+                        }
+                        break;
+                    }
+                    break;
+                case 4:
+                    while (true)
+                    {
+                        Console.Write(" 1: I-POiT,\n 2: ISiTOPB,\n 3: Med Electronic,\n 4: MiKPRS, \n 5: PMS,\n" +
+                            " 6: ESB,\n You choice: ");
+                        newSpeciality = Convert.ToInt32(Console.ReadLine());
+                        if (newSpeciality < 1 || newSpeciality > 6)
+                        {
+                            Console.WriteLine("\n Your choice isn't correct!\n");
+                            continue;
+                        }
+                        break;
+                    }
+                    break;
+                case 5:
+                    while (true)
+                    {
+                        Console.Write(" 1: KIS,\n 2: NiNE,\n 3: Radio Informatics,\n 4: Radio Engineering, " +
+                             "\n 5: Electronic Systems,\n 6: RZI,\n 7: Professional study \n\n You choice: ");
+                        newSpeciality = Convert.ToInt32(Console.ReadLine());
+                        if (newSpeciality < 1 || newSpeciality > 7)
+                        {
+                            Console.WriteLine("\n Your choice isn't correct!\n");
+                            continue;
+                        }
+                        break;
+                    }
+                    break;
+            }
+
+            person[number - 1].TransferSpeciality(newSpeciality);
         }
     }
 }
