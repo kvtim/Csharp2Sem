@@ -12,7 +12,7 @@ namespace LR_5
         public int SkippingHours { get; set; }
         public double AvarageMark { get; set; }
         public StudentSecialty(int age, string name, string surname, int weight,
-          int height, int course, faculty faculty, string speciality, int skippingHours, double avarageMark,
+          int height, int course, Faculty faculty, string speciality, int skippingHours, double avarageMark,
           string livePlace, int studyCost, string favoriteSubject)
           : base(age, name, surname, weight, height, course, faculty)
         {
