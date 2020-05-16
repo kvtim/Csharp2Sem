@@ -4,10 +4,10 @@ using System.Text;
 
 namespace LR_5
 {
-    interface ISomeMethods
+ interface IActionsWithStudents
     {
         bool PositiveAverageMark();
-        void TransferFaculty(int transfer);
-        void TransferSpeciality(int speciality);
+        void TransferFaculty(Faculty newFaculty);
+        void TransferSpeciality(int newSpeciality);
     }
 }
