@@ -25,39 +25,17 @@ namespace LR_5
         }
         public bool Equals(StudentSecialty nextStudent)
         {
-            if (this.Course == nextStudent.Course)
-            {
-                return true;
-            }
-            else return false;
+                return (this.Course == nextStudent.Course);
         }
-        public void TransferFaculty(int transfer)
+        public void TransferFaculty(Faculty newFaculty)
         {
-            switch (transfer)
-            {
-                case 1:
-                    this.Faculty = faculty.KSIS;
-                    break;
-                case 2:
-                    this.Faculty = faculty.FITY;
-                    break;
-                case 3:
-                    this.Faculty = faculty.IEF;
-                    break;
-                case 4:
-                    this.Faculty = faculty.FKP;
-                    break;
-                case 5:
-                    this.Faculty = faculty.FRE;
-                    break;
-            }
-
+            this.Faculty = newFaculty;
         }
-        public void TransferSpeciality(int speciality)
+        public void TransferSpeciality(int newSpeciality)
         {
-            if (this.Faculty == faculty.KSIS)
+            if (this.Faculty == Faculty.KSIS)
             {
-                switch (speciality)
+                switch (newSpeciality)
                 {
                     case 1:
                         this.Speciality = "POIT";
@@ -73,9 +51,9 @@ namespace LR_5
                         break;
                 }
             }
-            else if (this.Faculty == faculty.FITY)
+            else if (this.Faculty == Faculty.FITY)
             {
-                switch (speciality)
+                switch (newSpeciality)
                 {
                     case 1:
                         this.Speciality = "ASOI";
@@ -94,9 +72,9 @@ namespace LR_5
                         break;
                 }
             }
-            else if (this.Faculty == faculty.IEF)
+            else if (this.Faculty == Faculty.IEF)
             {
-                switch (speciality)
+                switch (newSpeciality)
                 {
                     case 1:
                         this.Speciality = "Logistics";
@@ -112,9 +90,9 @@ namespace LR_5
                         break;
                 }
             }
-            else if (this.Faculty == faculty.FKP)
+            else if (this.Faculty == Faculty.FKP)
             {
-                switch (speciality)
+                switch (newSpeciality)
                 {
                     case 1:
                         this.Speciality = "I-POiT";
@@ -136,9 +114,9 @@ namespace LR_5
                         break;
                 }
             }
-            else if (this.Faculty == faculty.FRE)
+            else if (this.Faculty == Faculty.FRE)
             {
-                switch (speciality)
+                switch (newSpeciality)
                 {
                     case 1:
                         this.Speciality = "KIS";
@@ -166,9 +144,7 @@ namespace LR_5
         }
         public bool PositiveAverageMark()
         {
-            if (this.AvarageMark >= 4)
-                return true;
-            else return false;
+            return (this.AvarageMark >= 4);
         }
         public override void SelectData(int intData)
         {
