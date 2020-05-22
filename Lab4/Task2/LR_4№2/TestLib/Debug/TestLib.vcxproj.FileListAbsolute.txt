@@ -1,0 +1,2 @@
+C:\TestLib\Debug\MathLibrary.dll
+C:\TestLib\Debug\MathLibrary.pdb

@@ -1,0 +1,11 @@
+D:\проекты\C# 2 сем\LR_4№2\bin\Debug\netcoreapp2.1\LR_4№2.deps.json
+D:\проекты\C# 2 сем\LR_4№2\bin\Debug\netcoreapp2.1\LR_4№2.runtimeconfig.json
+D:\проекты\C# 2 сем\LR_4№2\bin\Debug\netcoreapp2.1\LR_4№2.runtimeconfig.dev.json
+D:\проекты\C# 2 сем\LR_4№2\bin\Debug\netcoreapp2.1\LR_4№2.dll
+D:\проекты\C# 2 сем\LR_4№2\bin\Debug\netcoreapp2.1\LR_4№2.pdb
+D:\проекты\C# 2 сем\LR_4№2\obj\Debug\netcoreapp2.1\LR_4№2.csprojAssemblyReference.cache
+D:\проекты\C# 2 сем\LR_4№2\obj\Debug\netcoreapp2.1\LR_4№2.csproj.CoreCompileInputs.cache
+D:\проекты\C# 2 сем\LR_4№2\obj\Debug\netcoreapp2.1\LR_4№2.AssemblyInfoInputs.cache
+D:\проекты\C# 2 сем\LR_4№2\obj\Debug\netcoreapp2.1\LR_4№2.AssemblyInfo.cs
+D:\проекты\C# 2 сем\LR_4№2\obj\Debug\netcoreapp2.1\LR_4№2.dll
+D:\проекты\C# 2 сем\LR_4№2\obj\Debug\netcoreapp2.1\LR_4№2.pdb
