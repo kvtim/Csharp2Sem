@@ -1,0 +1,1288 @@
+[33mcommit 3185c82137b8e07637762433398f709b5feafe15[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Your Name <fdghtrhtrh>
+Date:   Wed Apr 1 18:52:31 2020 +0300
+
+    CSharpLabs
+
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c5e82d7[m
+[1m--- /dev/null[m
+[1m+++ b/.gitignore[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mbin[m
+\ No newline at end of file[m
+[1mdiff --git a/.vs/LR_5/DesignTimeBuild/.dtbcache b/.vs/LR_5/DesignTimeBuild/.dtbcache[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0171329[m
+Binary files /dev/null and b/.vs/LR_5/DesignTimeBuild/.dtbcache differ
+[1mdiff --git a/.vs/LR_5/v16/.suo b/.vs/LR_5/v16/.suo[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e71dfcb[m
+Binary files /dev/null and b/.vs/LR_5/v16/.suo differ
+[1mdiff --git a/.vs/LR_5/v16/Server/sqlite3/db.lock b/.vs/LR_5/v16/Server/sqlite3/db.lock[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e69de29[m
+[1mdiff --git a/.vs/LR_5/v16/Server/sqlite3/storage.ide b/.vs/LR_5/v16/Server/sqlite3/storage.ide[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6f91ecf[m
+Binary files /dev/null and b/.vs/LR_5/v16/Server/sqlite3/storage.ide differ
+[1mdiff --git a/Faculty.cs b/Faculty.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..17f9810[m
+[1m--- /dev/null[m
+[1m+++ b/Faculty.cs[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32m﻿using System;[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing System.Text;[m
+[32m+[m
+[32m+[m[32mnamespace LR_5[m
+[32m+[m[32m{[m
+[32m+[m[32m    enum Faculty[m
+[32m+[m[32m    {[m
+[32m+[m[32m        KSIS,[m
+[32m+[m[32m        FITY,[m
+[32m+[m[32m        IEF,[m
+[32m+[m[32m        FKP,[m
+[32m+[m[32m        FRE[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/LR_5.csproj b/LR_5.csproj[m
+[1mnew file mode 100644[m
+[1mindex 0000000..23df604[m
+[1m--- /dev/null[m
+[1m+++ b/LR_5.csproj[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m<Project Sdk="Microsoft.NET.Sdk">[m
+[32m+[m
+[32m+[m[32m  <PropertyGroup>[m
+[32m+[m[32m    <OutputType>Exe</OutputType>[m
+[32m+[m[32m    <TargetFramework>netcoreapp2.1</TargetFramework>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m
+[32m+[m[32m</Project>[m
+[1mdiff --git a/LR_5.sln b/LR_5.sln[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5d07ec5[m
+[1m--- /dev/null[m
+[1m+++ b/LR_5.sln[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32m﻿[m
+[32m+[m[32mMicrosoft Visual Studio Solution File, Format Version 12.00[m
+[32m+[m[32m# Visual Studio Version 16[m
+[32m+[m[32mVisualStudioVersion = 16.0.29306.81[m
+[32m+[m[32mMinimumVisualStudioVersion = 10.0.40219.1[m
+[32m+[m[32mProject("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LR_5", "LR_5.csproj", "{5291FA18-40EF-4358-8369-AFE0D185FC9A}"[m
+[32m+[m[32mEndProject[m
+[32m+[m[32mProject("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FAB206BB-E260-4FD0-AC78-BB69EA2BB015}"[m
+[32m+[m[32mEndProject[m
+[32m+[m[32mGlobal[m
+[32m+[m	[32mGlobalSection(SolutionConfigurationPlatforms) = preSolution[m
+[32m+[m		[32mDebug|Any CPU = Debug|Any CPU[m
+[32m+[m		[32mRelease|Any CPU = Release|Any CPU[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m	[32mGlobalSection(ProjectConfigurationPlatforms) = postSolution[m
+[32m+[m		[32m{5291FA18-40EF-4358-8369-AFE0D185FC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU[m
+[32m+[m		[32m{5291FA18-40EF-4358-8369-AFE0D185FC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU[m
+[32m+[m		[32m{5291FA18-40EF-4358-8369-AFE0D185FC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU[m
+[32m+[m		[32m{5291FA18-40EF-4358-8369-AFE0D185FC9A}.Release|Any CPU.Build.0 = Release|Any CPU[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m	[32mGlobalSection(SolutionProperties) = preSolution[m
+[32m+[m		[32mHideSolutionNode = FALSE[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m	[32mGlobalSection(ExtensibilityGlobals) = postSolution[m
+[32m+[m		[32mSolutionGuid = {8B05B1F0-2D96-4388-8F51-E5449EF6F969}[m
+[32m+[m	[32mEndGlobalSection[m
+[32m+[m[32mEndGlobal[m
+[1mdiff --git a/Person.cs b/Person.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ee35cc7[m
+[1m--- /dev/null[m
+[1m+++ b/Person.cs[m
+[36m@@ -0,0 +1,48 @@[m
+[32m+[m[32m﻿using System;[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing System.Text;[m
+[32m+[m
+[32m+[m[32mnamespace LR_5[m
+[32m+[m[32m{[m
+[32m+[m[32m    class Person[m
+[32m+[m[32m    {[m
+[32m+[m[32m        public int Age { get; set; }[m
+[32m+[m[32m        public string Name { get; set; }[m
+[32m+[m[32m        public string Surname { get; set; }[m
+[32m+[m[32m        public int Weight { get; set; }[m
+[32m+[m[32m        public int Height { get; set; }[m
+[32m+[m[32m        public int PersonID { get; set; }[m
+[32m+[m
+[32m+[m[32m        static private int id = 100;[m
+[32m+[m[32m        public Person(int age, string name, string surname, int weight, int height)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            this.Age = age;[m
+[32m+[m[32m            this.Name = name;[m
+[32m+[m[32m            this.Surname = surname;[m
+[32m+[m[32m            this.Weight = weight;[m
+[32m+[m[32m            this.Height = height;[m
+[32m+[m[32m            Person.id += 1;[m
+[32m+[m[32m            this.PersonID = Person.id;[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m[32m        public virtual void SelectData(int b)[m
+[32m+[m[32m        {[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        public void SelectData(string a)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            switch (a)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                case "Surname":[m
+[32m+[m[32m                    Console.WriteLine($" Surname: {Surname}");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case "Name":[m
+[32m+[m[32m                    Console.WriteLine($" Name: {Name}");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+[1mdiff --git a/Program.cs b/Program.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0692ce7[m
+[1m--- /dev/null[m
+[1m+++ b/Program.cs[m
+[36m@@ -0,0 +1,51 @@[m
+[32m+[m[32m﻿using System;[m
+[32m+[m
+[32m+[m[32mnamespace LR_5[m
+[32m+[m[32m{[m
+[32m+[m[32m    class Program[m
+[32m+[m[32m    {[m
+[32m+[m[32m        static void Main(string[] args)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            StudentSecialtyperson[0] = new StudentSecialty(18, "Egor", "Shirko", 49, 205, 1,[m
+[32m+[m[32m                Faculty.KSIS, "IiTP", 90, 10.0, "Pizdische", 1000000, "C++");[m[41m [m
+[32m+[m[32m            StudentSecialty person[1] = new StudentSecialty(20, "Petr", "Petrovich", 119, 167, 3,[m
+[32m+[m[32m                 Faculty.FRE, "Radiotexnik", 5, 2.3, "Brest", 100, "Radio");[m
+[32m+[m
+[32m+[m[32m            while (true)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                Console.Write(" Select first student data: Name or Surname: ");[m
+[32m+[m[32m                string StringData1 = Console.ReadLine();[m
+[32m+[m[32m               person[0].SelectData(StringData1);[m
+[32m+[m[32m                Console.Write(" Select first student data: \n 0: Age; \n 1: Weight;" +[m
+[32m+[m[32m                    " \n 2: Height; \n 3: Id; \n 4: Course; \n 5: Faculty; \n 6: Speciality;" +[m
+[32m+[m[32m                    " \n 7: Skipping hours; \n 8: Avarage mark; \n 9: Live place; \n 10: Study cost;" +[m
+[32m+[m[32m                    " \n 11: Favorite subject; \n 12: All data of 1 person; " +[m
+[32m+[m[32m                    " \n Your choice: ");[m
+[32m+[m[32m                int IntData1 = Convert.ToInt32(Console.ReadLine());[m
+[32m+[m[32m               person[0].SelectData(IntData1);[m
+[32m+[m[32m                Console.Write(" Go to next person Yes or No: ");[m
+[32m+[m[32m                string continuation = Console.ReadLine();[m
+[32m+[m[32m                if (continuation == "Yes")[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            while (true)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                Console.Write(" Select second student data: Name or Surname: ");[m
+[32m+[m[32m                string StringData2 = Console.ReadLine();[m
+[32m+[m[32m               person[0].SelectData(StringData2);[m
+[32m+[m[32m                Console.Write(" Select second student data: \n 0: Age; \n 1: Weight;" +[m
+[32m+[m[32m                    " \n 2: Height; \n 3: Id; \n 4: Course; \n 5: Faculty; \n 6: Speciality;" +[m
+[32m+[m[32m                    " \n 7: Skipping hours; \n 8: Avarage mark; \n 9: Live place; \n 10: Study cost;" +[m
+[32m+[m[32m                    " \n 11: Favorite subject; \n 12: All data of 2 person; " +[m
+[32m+[m[32m                    " \n Your choice: ");[m
+[32m+[m[32m                int IntData2 = Convert.ToInt32(Console.ReadLine());[m
+[32m+[m[32m                person[1].SelectData(IntData2);[m
+[32m+[m[32m                Console.Write(" Exit the program ? Yes or No: ");[m
+[32m+[m[32m                string exit = Console.ReadLine();[m
+[32m+[m[32m                if (exit == "Yes")[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/Student.cs b/Student.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2759fad[m
+[1m--- /dev/null[m
+[1m+++ b/Student.cs[m
+[36m@@ -0,0 +1,19 @@[m
+[32m+[m[32m﻿using System;[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing System.Text;[m
+[32m+[m
+[32m+[m[32mnamespace LR_5[m
+[32m+[m[32m{[m
+[32m+[m[32m    class Student : Person[m
+[32m+[m[32m    {[m
+[32m+[m[32m        public int Course { get; set; }[m
+[32m+[m[32m        public Faculty Faculty { get; set; }[m
+[32m+[m[32m        public Student(int age, string name, string surname, int weight,[m
+[32m+[m[32m            int height, int course, Faculty Faculty)[m
+[32m+[m[32m            : base(age, name, surname, weight, height)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            this.Course = course;[m
+[32m+[m[32m            this.Faculty = Faculty;[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/StudentInfo.cs b/StudentInfo.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..23b9f38[m
+[1m--- /dev/null[m
+[1m+++ b/StudentInfo.cs[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32m﻿using System;[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing System.Text;[m
+[32m+[m
+[32m+[m[32mnamespace LR_5[m
+[32m+[m[32m{[m
+[32m+[m[32m    struct StudentInfo[m
+[32m+[m[32m    {[m
+[32m+[m[32m        public string LivePlace { get; set; }[m
+[32m+[m[32m        public int StudyCost { get; set; }[m
+[32m+[m[32m        public string FavoriteSubject { get; set; }[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/StudentSecialty.cs b/StudentSecialty.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..057cf33[m
+[1m--- /dev/null[m
+[1m+++ b/StudentSecialty.cs[m
+[36m@@ -0,0 +1,77 @@[m
+[32m+[m[32m﻿using System;[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing System.Text;[m
+[32m+[m
+[32m+[m[32mnamespace LR_5[m
+[32m+[m[32m{[m
+[32m+[m[32m    class StudentSecialty : Student[m
+[32m+[m[32m    {[m
+[32m+[m[32m        private StudentInfo Info = new StudentInfo(); //{ get; set; }[m
+[32m+[m[32m        public string Speciality { get; set; }[m
+[32m+[m[32m        public int SkippingHours { get; set; }[m
+[32m+[m[32m        public double AvarageMark { get; set; }[m
+[32m+[m
+[32m+[m[32m        public StudentSecialty(int age, string name, string surname, int weight,[m
+[32m+[m[32m          int height, int course, Faculty Faculty, string speciality, int skippingHours, double avarageMark, string livePlace,[m
+[32m+[m[32m          int studyCost, string favoriteSubject)[m
+[32m+[m[32m          : base(age, name, surname, weight, height, course, Faculty)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            this.Speciality = speciality;[m
+[32m+[m[32m            this.SkippingHours = skippingHours;[m
+[32m+[m[32m            this.AvarageMark = avarageMark;[m
+[32m+[m[32m            this.Info.LivePlace = livePlace;[m
+[32m+[m[32m            this.Info.StudyCost = studyCost;[m
+[32m+[m[32m            this.Info.FavoriteSubject = favoriteSubject;[m
+[32m+[m[32m        }[m
+[32m+[m[32m        public override void SelectData(int b)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            switch (b)[m
+[32m+[m[32m            {[m
+[32m+[m[32m                case 0:[m
+[32m+[m[32m                    Console.WriteLine($" Age: {Age}");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 1:[m
+[32m+[m[32m                    Console.WriteLine($" Weight: {Weight}");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 2:[m
+[32m+[m[32m                    Console.WriteLine($" Height: {Height}");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 3:[m
+[32m+[m[32m                    Console.WriteLine($" Id: {PersonID}");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 4:[m
+[32m+[m[32m                    Console.WriteLine($" Course: {Course}");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 5:[m
+[32m+[m[32m                    Console.WriteLine($" Faculty: {Faculty} ");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 6:[m
+[32m+[m[32m                    Console.WriteLine($" Speciality: {Speciality} ");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 7:[m
+[32m+[m[32m                    Console.WriteLine($" Skipping hours: {SkippingHours} ");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 8:[m
+[32m+[m[32m                    Console.WriteLine($" Avarage mark: {AvarageMark} ");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 9:[m
+[32m+[m[32m                    Console.WriteLine($" Live place: {Info.LivePlace} ");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 10:[m
+[32m+[m[32m                    Console.WriteLine($" Study cost: {Info.StudyCost} ");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 11:[m
+[32m+[m[32m                    Console.WriteLine($" Favorite subject: {Info.FavoriteSubject} ");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m                case 12:[m
+[32m+[m[32m                    Console.WriteLine($" All data of 1 person: \n Name: {Name} \n Surname: {Surname}" +[m
+[32m+[m[32m                        $" \n Age: {Age} \n Weight: {Weight} \n Height: {Height} \n Id: {PersonID}" +[m
+[32m+[m[32m                        $" \n Course: {Course} \n Faculty: {Faculty} \n Speciality: {Speciality}" +[m
+[32m+[m[32m                        $" \n Skipping hours: {SkippingHours} \n Avarage mark: {AvarageMark}" +[m
+[32m+[m[32m                        $" \n Live place: {Info.LivePlace} \n Study cost: {Info.StudyCost} \n Favorite subject: {Info.FavoriteSubject}");[m
+[32m+[m[32m                    break;[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/obj/Debug/netcoreapp2.1/LR_5.AssemblyInfo.cs b/obj/Debug/netcoreapp2.1/LR_5.AssemblyInfo.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1fa9704[m
+[1m--- /dev/null[m
+[1m+++ b/obj/Debug/netcoreapp2.1/LR_5.AssemblyInfo.cs[m
+[36m@@ -0,0 +1,23 @@[m
+[32m+[m[32m//------------------------------------------------------------------------------[m
+[32m+[m[32m// <auto-generated>[m
+[32m+[m[32m//     Этот код создан программой.[m
+[32m+[m[32m//     Исполняемая версия:4.0.30319.42000[m
+[32m+[m[32m//[m
+[32m+[m[32m//     Изменения в этом файле могут привести к неправильной работе и будут потеряны в случае[m
+[32m+[m[32m//     повторной генерации кода.[m
+[32m+[m[32m// </auto-generated>[m
+[32m+[m[32m//------------------------------------------------------------------------------[m
+[32m+[m
+[32m+[m[32musing System;[m
+[32m+[m[32musing System.Reflection;[m
+[32m+[m
+[32m+[m[32m[assembly: System.Reflection.AssemblyCompanyAttribute("LR_5")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyProductAttribute("LR_5")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyTitleAttribute("LR_5")][m
+[32m+[m[32m[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")][m
+[32m+[m
+[32m+[m[32m// Создано классом WriteCodeFragment MSBuild.[m
+[32m+[m
+[1mdiff --git a/obj/Debug/netcoreapp2.1/LR_5.AssemblyInfoInputs.cache b/obj/Debug/netcoreapp2.1/LR_5.AssemblyInfoInputs.cache[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3e89438[m
+[1m--- /dev/null[m
+[1m+++ b/obj/Debug/netcoreapp2.1/LR_5.AssemblyInfoInputs.cache[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32m1a23d73c416b85e500550b8f76a0f743521b0dbe[m
+[1mdiff --git a/obj/Debug/netcoreapp2.1/LR_5.assets.cache b/obj/Debug/netcoreapp2.1/LR_5.assets.cache[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bb4472f[m
+Binary files /dev/null and b/obj/Debug/netcoreapp2.1/LR_5.assets.cache differ
+[1mdiff --git a/obj/Debug/netcoreapp2.1/LR_5.csproj.CoreCompileInputs.cache b/obj/Debug/netcoreapp2.1/LR_5.csproj.CoreCompileInputs.cache[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a910962[m
+[1m--- /dev/null[m
+[1m+++ b/obj/Debug/netcoreapp2.1/LR_5.csproj.CoreCompileInputs.cache[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32ma0c40152cf5615d1e1aeb4beca9d96afae538998[m
+[1mdiff --git a/obj/Debug/netcoreapp2.1/LR_5.csproj.FileListAbsolute.txt b/obj/Debug/netcoreapp2.1/LR_5.csproj.FileListAbsolute.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f410eee[m
+[1m--- /dev/null[m
+[1m+++ b/obj/Debug/netcoreapp2.1/LR_5.csproj.FileListAbsolute.txt[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.csprojAssemblyReference.cache[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.csproj.CoreCompileInputs.cache[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.AssemblyInfoInputs.cache[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.AssemblyInfo.cs[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.deps.json[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.runtimeconfig.json[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.runtimeconfig.dev.json[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.dll[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\bin\Debug\netcoreapp2.1\LR_5.pdb[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.dll[m
+[32m+[m[32mD:\проекты\C# 2 сем\LR_5\obj\Debug\netcoreapp2.1\LR_5.pdb[m
+[1mdiff --git a/obj/Debug/netcoreapp2.1/LR_5.csprojAssemblyReference.cache b/obj/Debug/netcoreapp2.1/LR_5.csprojAssemblyReference.cache[m
+[1mnew file mode 100644[m
+[1mindex 0000000..beef2cc[m
+Binary files /dev/null and b/obj/Debug/netcoreapp2.1/LR_5.csprojAssemblyReference.cache differ
+[1mdiff --git a/obj/Debug/netcoreapp2.1/LR_5.dll b/obj/Debug/netcoreapp2.1/LR_5.dll[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c6b89fc[m
+Binary files /dev/null and b/obj/Debug/netcoreapp2.1/LR_5.dll differ
+[1mdiff --git a/obj/Debug/netcoreapp2.1/LR_5.pdb b/obj/Debug/netcoreapp2.1/LR_5.pdb[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9ca50d1[m
+Binary files /dev/null and b/obj/Debug/netcoreapp2.1/LR_5.pdb differ
+[1mdiff --git a/obj/LR_5.csproj.nuget.cache b/obj/LR_5.csproj.nuget.cache[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5eea0b7[m
+[1m--- /dev/null[m
+[1m+++ b/obj/LR_5.csproj.nuget.cache[m
+[36m@@ -0,0 +1,5 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "version": 1,[m
+[32m+[m[32m  "dgSpecHash": "qC2B19K1TTcwsQhrXChY0Orj3wl3lHtypMjMA5Qxp3MzkvjBWUi0us3N3yTYZgVdfxKK24bQZwhqRAZg+6Jqcw==",[m
+[32m+[m[32m  "success": true[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/obj/LR_5.csproj.nuget.dgspec.json b/obj/LR_5.csproj.nuget.dgspec.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3785e83[m
+[1m--- /dev/null[m
+[1m+++ b/obj/LR_5.csproj.nuget.dgspec.json[m
+[36m@@ -0,0 +1,61 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "format": 1,[m
+[32m+[m[32m  "restore": {[m
+[32m+[m[32m    "D:\\проекты\\C# 2 сем\\LR_5\\LR_5.csproj": {}[m
+[32m+[m[32m  },[m
+[32m+[m[32m  "projects": {[m
+[32m+[m[32m    "D:\\проекты\\C# 2 сем\\LR_5\\LR_5.csproj": {[m
+[32m+[m[32m      "version": "1.0.0",[m
+[32m+[m[32m      "restore": {[m
+[32m+[m[32m        "projectUniqueName": "D:\\проекты\\C# 2 сем\\LR_5\\LR_5.csproj",[m
+[32m+[m[32m        "projectName": "LR_5",[m
+[32m+[m[32m        "projectPath": "D:\\проекты\\C# 2 сем\\LR_5\\LR_5.csproj",[m
+[32m+[m[32m        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",[m
+[32m+[m[32m        "outputPath": "D:\\проекты\\C# 2 сем\\LR_5\\obj\\",[m
+[32m+[m[32m        "projectStyle": "PackageReference",[m
+[32m+[m[32m        "fallbackFolders": [[m
+[32m+[m[32m          "D:\\Microsoft\\Xamarin\\NuGet\\",[m
+[32m+[m[32m          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"[m
+[32m+[m[32m        ],[m
+[32m+[m[32m        "configFilePaths": [[m
+[32m+[m[32m          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",[m
+[32m+[m[32m          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",[m
+[32m+[m[32m          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"[m
+[32m+[m[32m        ],[m
+[32m+[m[32m        "originalTargetFrameworks": [[m
+[32m+[m[32m          "netcoreapp2.1"[m
+[32m+[m[32m        ],[m
+[32m+[m[32m        "sources": {[m
+[32m+[m[32m          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},[m
+[32m+[m[32m          "https://api.nuget.org/v3/index.json": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "frameworks": {[m
+[32m+[m[32m          "netcoreapp2.1": {[m
+[32m+[m[32m            "projectReferences": {}[m
+[32m+[m[32m          }[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "warningProperties": {[m
+[32m+[m[32m          "warnAsError": [[m
+[32m+[m[32m            "NU1605"[m
+[32m+[m[32m          ][m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "frameworks": {[m
+[32m+[m[32m        "netcoreapp2.1": {[m
+[32m+[m[32m          "dependencies": {[m
+[32m+[m[32m            "Microsoft.NETCore.App": {[m
+[32m+[m[32m              "target": "Package",[m
+[32m+[m[32m              "version": "[2.1.0, )",[m
+[32m+[m[32m              "autoReferenced": true[m
+[32m+[m[32m            }[m
+[32m+[m[32m          },[m
+[32m+[m[32m          "imports": [[m
+[32m+[m[32m            "net461"[m
+[32m+[m[32m          ],[m
+[32m+[m[32m          "assetTargetFallback": true,[m
+[32m+[m[32m          "warn": true[m
+[32m+[m[32m        }[m
+[32m+[m[32m      }[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/obj/LR_5.csproj.nuget.g.props b/obj/LR_5.csproj.nuget.g.props[m
+[1mnew file mode 100644[m
+[1mindex 0000000..896a50b[m
+[1m--- /dev/null[m
+[1m+++ b/obj/LR_5.csproj.nuget.g.props[m
+[36m@@ -0,0 +1,18 @@[m
+[32m+[m[32m﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>[m
+[32m+[m[32m<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">[m
+[32m+[m[32m  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">[m
+[32m+[m[32m    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>[m
+[32m+[m[32m    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>[m
+[32m+[m[32m    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>[m
+[32m+[m[32m    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>[m
+[32m+[m[32m    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\ASUS\.nuget\packages\;D:\Microsoft\Xamarin\NuGet\;C:\Program Files\dotnet\sdk\NuGetFallbackFolder</NuGetPackageFolders>[m
+[32m+[m[32m    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>[m
+[32m+[m[32m    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.2.0</NuGetToolVersion>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <PropertyGroup>[m
+[32m+[m[32m    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">[m
+[32m+[m[32m    <Import Project="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.1.0\build\netcoreapp2.1\Microsoft.NETCore.App.props" Condition="Exists('C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.1.0\build\netcoreapp2.1\Microsoft.NETCore.App.props')" />[m
+[32m+[m[32m  </ImportGroup>[m
+[32m+[m[32m</Project>[m
+\ No newline at end of file[m
+[1mdiff --git a/obj/LR_5.csproj.nuget.g.targets b/obj/LR_5.csproj.nuget.g.targets[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7451e0f[m
+[1m--- /dev/null[m
+[1m+++ b/obj/LR_5.csproj.nuget.g.targets[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>[m
+[32m+[m[32m<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">[m
+[32m+[m[32m  <PropertyGroup>[m
+[32m+[m[32m    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>[m
+[32m+[m[32m  </PropertyGroup>[m
+[32m+[m[32m  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">[m
+[32m+[m[32m    <Import Project="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\netstandard.library\2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('C:\Program Files\dotnet\sdk\NuGetFallbackFolder\netstandard.library\2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />[m
+[32m+[m[32m    <Import Project="C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.1.0\build\netcoreapp2.1\Microsoft.NETCore.App.targets" Condition="Exists('C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.1.0\build\netcoreapp2.1\Microsoft.NETCore.App.targets')" />[m
+[32m+[m[32m  </ImportGroup>[m
+[32m+[m[32m</Project>[m
+\ No newline at end of file[m
+[1mdiff --git a/obj/project.assets.json b/obj/project.assets.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5270915[m
+[1m--- /dev/null[m
+[1m+++ b/obj/project.assets.json[m
+[36m@@ -0,0 +1,748 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m  "version": 3,[m
+[32m+[m[32m  "targets": {[m
+[32m+[m[32m    ".NETCoreApp,Version=v2.1": {[m
+[32m+[m[32m      "Microsoft.NETCore.App/2.1.0": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "Microsoft.NETCore.DotNetHostPolicy": "2.1.0",[m
+[32m+[m[32m          "Microsoft.NETCore.Platforms": "2.1.0",[m
+[32m+[m[32m          "Microsoft.NETCore.Targets": "2.1.0",[m
+[32m+[m[32m          "NETStandard.Library": "2.0.3"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "ref/netcoreapp2.1/Microsoft.CSharp.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/Microsoft.VisualBasic.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/Microsoft.Win32.Primitives.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.AppContext.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Buffers.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Collections.Concurrent.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Collections.Immutable.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Collections.NonGeneric.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Collections.Specialized.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Collections.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ComponentModel.Annotations.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ComponentModel.DataAnnotations.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ComponentModel.EventBasedAsync.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ComponentModel.Primitives.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ComponentModel.TypeConverter.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ComponentModel.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Configuration.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Console.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Core.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Data.Common.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Data.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.Contracts.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.Debug.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.DiagnosticSource.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.FileVersionInfo.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.Process.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.StackTrace.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.TextWriterTraceListener.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.Tools.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.TraceSource.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Diagnostics.Tracing.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Drawing.Primitives.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Drawing.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Dynamic.Runtime.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Globalization.Calendars.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Globalization.Extensions.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Globalization.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.Compression.Brotli.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.Compression.FileSystem.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.Compression.ZipFile.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.Compression.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.FileSystem.DriveInfo.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.FileSystem.Primitives.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.FileSystem.Watcher.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.FileSystem.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.IsolatedStorage.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.MemoryMappedFiles.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.Pipes.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.UnmanagedMemoryStream.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.IO.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Linq.Expressions.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Linq.Parallel.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Linq.Queryable.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Linq.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Memory.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.Http.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.HttpListener.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.Mail.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.NameResolution.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.NetworkInformation.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.Ping.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.Primitives.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.Requests.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.Security.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.ServicePoint.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.Sockets.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.WebClient.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.WebHeaderCollection.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.WebProxy.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.WebSockets.Client.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.WebSockets.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Net.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Numerics.Vectors.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Numerics.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ObjectModel.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Reflection.DispatchProxy.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Reflection.Emit.ILGeneration.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Reflection.Emit.Lightweight.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Reflection.Emit.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Reflection.Extensions.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Reflection.Metadata.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Reflection.Primitives.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Reflection.TypeExtensions.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Reflection.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Resources.Reader.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Resources.ResourceManager.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Resources.Writer.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.CompilerServices.VisualC.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.Extensions.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.Handles.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.InteropServices.RuntimeInformation.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.InteropServices.WindowsRuntime.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.InteropServices.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.Loader.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.Numerics.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.Serialization.Formatters.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.Serialization.Json.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.Serialization.Primitives.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.Serialization.Xml.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.Serialization.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Runtime.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Security.Claims.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Security.Cryptography.Algorithms.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Security.Cryptography.Csp.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Security.Cryptography.Encoding.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Security.Cryptography.Primitives.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Security.Cryptography.X509Certificates.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Security.Principal.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Security.SecureString.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Security.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ServiceModel.Web.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ServiceProcess.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Text.Encoding.Extensions.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Text.Encoding.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Text.RegularExpressions.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Threading.Overlapped.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Threading.Tasks.Dataflow.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Threading.Tasks.Extensions.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Threading.Tasks.Parallel.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Threading.Tasks.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Threading.Thread.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Threading.ThreadPool.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Threading.Timer.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Threading.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Transactions.Local.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Transactions.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.ValueTuple.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Web.HttpUtility.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Web.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Windows.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Xml.Linq.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Xml.ReaderWriter.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Xml.Serialization.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Xml.XDocument.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Xml.XPath.XDocument.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Xml.XPath.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Xml.XmlDocument.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Xml.XmlSerializer.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.Xml.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/System.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/WindowsBase.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/mscorlib.dll": {},[m
+[32m+[m[32m          "ref/netcoreapp2.1/netstandard.dll": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "build": {[m
+[32m+[m[32m          "build/netcoreapp2.1/Microsoft.NETCore.App.props": {},[m
+[32m+[m[32m          "build/netcoreapp2.1/Microsoft.NETCore.App.targets": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.NETCore.DotNetAppHost/2.1.0": {[m
+[32m+[m[32m        "type": "package"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.NETCore.DotNetHostPolicy/2.1.0": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "Microsoft.NETCore.DotNetHostResolver": "2.1.0"[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.NETCore.DotNetHostResolver/2.1.0": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "Microsoft.NETCore.DotNetAppHost": "2.1.0"[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.NETCore.Platforms/2.1.0": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "lib/netstandard1.0/_._": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/netstandard1.0/_._": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "Microsoft.NETCore.Targets/2.1.0": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "lib/netstandard1.0/_._": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/netstandard1.0/_._": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "NETStandard.Library/2.0.3": {[m
+[32m+[m[32m        "type": "package",[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "Microsoft.NETCore.Platforms": "1.1.0"[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "compile": {[m
+[32m+[m[32m          "lib/netstandard1.0/_._": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "runtime": {[m
+[32m+[m[32m          "lib/netstandard1.0/_._": {}[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "build": {[m
+[32m+[m[32m          "build/netstandard2.0/NETStandard.Library.targets": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      }[m
+[32m+[m[32m    }[m
+[32m+[m[32m  },[m
+[32m+[m[32m  "libraries": {[m
+[32m+[m[32m    "Microsoft.NETCore.App/2.1.0": {[m
+[32m+[m[32m      "sha512": "JNHhG+j5eIhG26+H721IDmwswGUznTwwSuJMFe/08h0X2YarHvA15sVAvUkA/2Sp3W0ENNm48t+J7KTPRqEpfA==",[m
+[32m+[m[32m      "type": "package",[m
+[32m+[m[32m      "path": "microsoft.netcore.app/2.1.0",[m
+[32m+[m[32m      "files": [[m
+[32m+[m[32m        ".nupkg.metadata",[m
+[32m+[m[32m        ".signature.p7s",[m
+[32m+[m[32m        "LICENSE.TXT",[m
+[32m+[m[32m        "Microsoft.NETCore.App.versions.txt",[m
+[32m+[m[32m        "THIRD-PARTY-NOTICES.TXT",[m
+[32m+[m[32m        "build/netcoreapp2.1/Microsoft.NETCore.App.PlatformManifest.txt",[m
+[32m+[m[32m        "build/netcoreapp2.1/Microsoft.NETCore.App.props",[m
+[32m+[m[32m        "build/netcoreapp2.1/Microsoft.NETCore.App.targets",[m
+[32m+[m[32m        "microsoft.netcore.app.2.1.0.nupkg.sha512",[m
+[32m+[m[32m        "microsoft.netcore.app.nuspec",[m
+[32m+[m[32m        "ref/netcoreapp/_._",[m
+[32m+[m[32m        "ref/netcoreapp2.1/Microsoft.CSharp.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/Microsoft.CSharp.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/Microsoft.VisualBasic.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/Microsoft.VisualBasic.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/Microsoft.Win32.Primitives.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/Microsoft.Win32.Primitives.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.AppContext.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Buffers.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Buffers.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.Concurrent.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.Concurrent.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.Immutable.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.Immutable.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.NonGeneric.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.NonGeneric.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.Specialized.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.Specialized.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Collections.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.Annotations.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.Annotations.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.DataAnnotations.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.EventBasedAsync.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.EventBasedAsync.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.Primitives.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.Primitives.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.TypeConverter.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.TypeConverter.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ComponentModel.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Configuration.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Console.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Console.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Core.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Data.Common.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Data.Common.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Data.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Contracts.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Contracts.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Debug.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Debug.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.DiagnosticSource.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.DiagnosticSource.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.FileVersionInfo.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.FileVersionInfo.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Process.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Process.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.StackTrace.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.StackTrace.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.TextWriterTraceListener.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.TextWriterTraceListener.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Tools.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Tools.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.TraceSource.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.TraceSource.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Tracing.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Diagnostics.Tracing.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Drawing.Primitives.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Drawing.Primitives.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Drawing.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Dynamic.Runtime.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Globalization.Calendars.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Globalization.Extensions.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Globalization.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.Compression.Brotli.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.Compression.FileSystem.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.Compression.ZipFile.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.Compression.ZipFile.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.Compression.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.Compression.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.FileSystem.DriveInfo.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.FileSystem.DriveInfo.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.FileSystem.Primitives.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.FileSystem.Watcher.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.FileSystem.Watcher.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.FileSystem.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.FileSystem.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.IsolatedStorage.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.IsolatedStorage.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.MemoryMappedFiles.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.MemoryMappedFiles.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.Pipes.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.Pipes.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.UnmanagedMemoryStream.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.IO.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Linq.Expressions.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Linq.Expressions.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Linq.Parallel.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Linq.Parallel.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Linq.Queryable.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Linq.Queryable.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Linq.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Linq.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Memory.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Memory.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Http.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Http.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.HttpListener.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.HttpListener.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Mail.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Mail.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.NameResolution.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.NameResolution.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.NetworkInformation.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.NetworkInformation.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Ping.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Ping.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Primitives.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Primitives.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Requests.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Requests.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Security.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Security.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.ServicePoint.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.ServicePoint.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Sockets.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.Sockets.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebClient.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebClient.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebHeaderCollection.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebHeaderCollection.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebProxy.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebProxy.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebSockets.Client.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebSockets.Client.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebSockets.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.WebSockets.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Net.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Numerics.Vectors.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Numerics.Vectors.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Numerics.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ObjectModel.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ObjectModel.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.DispatchProxy.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.DispatchProxy.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Emit.ILGeneration.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Emit.ILGeneration.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Emit.Lightweight.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Emit.Lightweight.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Emit.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Emit.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Extensions.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Metadata.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Metadata.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Primitives.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.Primitives.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.TypeExtensions.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.TypeExtensions.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Reflection.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Resources.Reader.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Resources.ResourceManager.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Resources.ResourceManager.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Resources.Writer.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Resources.Writer.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.CompilerServices.VisualC.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.CompilerServices.VisualC.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Extensions.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Extensions.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Handles.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.InteropServices.RuntimeInformation.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.InteropServices.RuntimeInformation.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.InteropServices.WindowsRuntime.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.InteropServices.WindowsRuntime.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.InteropServices.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.InteropServices.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Loader.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Loader.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Numerics.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Numerics.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Serialization.Formatters.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Serialization.Formatters.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Serialization.Json.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Serialization.Json.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Serialization.Primitives.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Serialization.Primitives.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Serialization.Xml.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Serialization.Xml.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.Serialization.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Runtime.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Claims.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Claims.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.Algorithms.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.Algorithms.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.Csp.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.Csp.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.Encoding.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.Encoding.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.Primitives.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.Primitives.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.X509Certificates.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Cryptography.X509Certificates.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Principal.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.Principal.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.SecureString.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Security.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ServiceModel.Web.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ServiceProcess.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Text.Encoding.Extensions.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Text.Encoding.Extensions.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Text.Encoding.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Text.RegularExpressions.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Text.RegularExpressions.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Overlapped.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Overlapped.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Tasks.Dataflow.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Tasks.Dataflow.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Tasks.Extensions.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Tasks.Extensions.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Tasks.Parallel.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Tasks.Parallel.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Tasks.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Tasks.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Thread.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Thread.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.ThreadPool.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.ThreadPool.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Timer.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.Timer.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Threading.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Transactions.Local.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Transactions.Local.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Transactions.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.ValueTuple.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Web.HttpUtility.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Web.HttpUtility.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Web.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Windows.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.Linq.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.ReaderWriter.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.ReaderWriter.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.Serialization.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.XDocument.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.XDocument.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.XPath.XDocument.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.XPath.XDocument.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.XPath.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.XPath.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.XmlDocument.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.XmlSerializer.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.XmlSerializer.xml",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.Xml.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/System.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/WindowsBase.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/mscorlib.dll",[m
+[32m+[m[32m        "ref/netcoreapp2.1/netstandard.dll",[m
+[32m+[m[32m        "runtime.json"[m
+[32m+[m[32m      ][m
+[32m+[m[32m    },[m
+[32m+[m[32m    "Microsoft.NETCore.DotNetAppHost/2.1.0": {[m
+[32m+[m[32m      "sha512": "vMn8V3GOp/SPOG2oE8WxswzAWZ/GZmc8EPiB3vc2EZ6us14ehXhsvUFXndYopGNSjCa9OdqC6L6xStF1KyUZnw==",[m
+[32m+[m[32m      "type": "package",[m
+[32m+[m[32m      "path": "microsoft.netcore.dotnetapphost/2.1.0",[m
+[32m+[m[32m      "files": [[m
+[32m+[m[32m        ".nupkg.metadata",[m
+[32m+[m[32m        ".signature.p7s",[m
+[32m+[m[32m        "LICENSE.TXT",[m
+[32m+[m[32m        "THIRD-PARTY-NOTICES.TXT",[m
+[32m+[m[32m        "microsoft.netcore.dotnetapphost.2.1.0.nupkg.sha512",[m
+[32m+[m[32m        "microsoft.netcore.dotnetapphost.nuspec",[m
+[32m+[m[32m        "runtime.json"[m
+[32m+[m[32m      ][m
+[32m+[m[32m    },[m
+[32m+[m[32m    "Microsoft.NETCore.DotNetHostPolicy/2.1.0": {[m
+[32m+[m[32m      "sha512": "vBUwNihtLUVS2HhO6WocYfAktRmfFihm6JB8/sJ53caVW+AelvbnYpfiGzaZDpkWjN6vA3xzOKPu9Vu8Zz3p8Q==",[m
+[32m+[m[32m      "type": "package",[m
+[32m+[m[32m      "path": "microsoft.netcore.dotnethostpolicy/2.1.0",[m
+[32m+[m[32m      "files": [[m
+[32m+[m[32m        ".nupkg.metadata",[m
+[32m+[m[32m        ".signature.p7s",[m
+[32m+[m[32m        "LICENSE.TXT",[m
+[32m+[m[32m        "THIRD-PARTY-NOTICES.TXT",[m
+[32m+[m[32m        "microsoft.netcore.dotnethostpolicy.2.1.0.nupkg.sha512",[m
+[32m+[m[32m        "microsoft.netcore.dotnethostpolicy.nuspec",[m
+[32m+[m[32m        "runtime.json"[m
+[32m+[m[32m      ][m
+[32m+[m[32m    },[m
+[32m+[m[32m    "Microsoft.NETCore.DotNetHostResolver/2.1.0": {[m
+[32m+[m[32m      "sha512": "o0PRql5qOHFEY3d1WvzE+T7cMFKtOsWLMg8L1oTeGNnI4u5AzOj8o6AdZT3y2GxFA1DAx7AQ9qZjpCO2/bgZRw==",[m
+[32m+[m[32m      "type": "package",[m
+[32m+[m[32m      "path": "microsoft.netcore.dotnethostresolver/2.1.0",[m
+[32m+[m[32m      "files": [[m
+[32m+[m[32m        ".nupkg.metadata",[m
+[32m+[m[32m        ".signature.p7s",[m
+[32m+[m[32m        "LICENSE.TXT",[m
+[32m+[m[32m        "THIRD-PARTY-NOTICES.TXT",[m
+[32m+[m[32m        "microsoft.netcore.dotnethostresolver.2.1.0.nupkg.sha512",[m
+[32m+[m[32m        "microsoft.netcore.dotnethostresolver.nuspec",[m
+[32m+[m[32m        "runtime.json"[m
+[32m+[m[32m      ][m
+[32m+[m[32m    },[m
+[32m+[m[32m    "Microsoft.NETCore.Platforms/2.1.0": {[m
+[32m+[m[32m      "sha512": "ok+RPAtESz/9MUXeIEz6Lv5XAGQsaNmEYXMsgVALj4D7kqC8gveKWXWXbufLySR2fWrwZf8smyN5RmHu0e4BHA==",[m
+[32m+[m[32m      "type": "package",[m
+[32m+[m[32m      "path": "microsoft.netcore.platforms/2.1.0",[m
+[32m+[m[32m      "files": [[m
+[32m+[m[32m        ".nupkg.metadata",[m
+[32m+[m[32m        ".signature.p7s",[m
+[32m+[m[32m        "LICENSE.TXT",[m
+[32m+[m[32m        "THIRD-PARTY-NOTICES.TXT",[m
+[32m+[m[32m        "lib/netstandard1.0/_._",[m
+[32m+[m[32m        "microsoft.netcore.platforms.2.1.0.nupkg.sha512",[m
+[32m+[m[32m        "microsoft.netcore.platforms.nuspec",[m
+[32m+[m[32m        "runtime.json",[m
+[32m+[m[32m        "useSharedDesignerContext.txt",[m
+[32m+[m[32m        "version.txt"[m
+[32m+[m[32m      ][m
+[32m+[m[32m    },[m
+[32m+[m[32m    "Microsoft.NETCore.Targets/2.1.0": {[m
+[32m+[m[32m      "sha512": "x188gIZXOwFXkPXyGavEcPGcR6RGvjFOES2QzskN4gERZjWPN34qhRsZVMC0CLJfQLGSButarcgWxPPM4vmg0w==",[m
+[32m+[m[32m      "type": "package",[m
+[32m+[m[32m      "path": "microsoft.netcore.targets/2.1.0",[m
+[32m+[m[32m      "files": [[m
+[32m+[m[32m        ".nupkg.metadata",[m
+[32m+[m[32m        ".signature.p7s",[m
+[32m+[m[32m        "LICENSE.TXT",[m
+[32m+[m[32m        "THIRD-PARTY-NOTICES.TXT",[m
+[32m+[m[32m        "lib/netstandard1.0/_._",[m
+[32m+[m[32m        "microsoft.netcore.targets.2.1.0.nupkg.sha512",[m
+[32m+[m[32m        "microsoft.netcore.targets.nuspec",[m
+[32m+[m[32m        "runtime.json",[m
+[32m+[m[32m        "useSharedDesignerContext.txt",[m
+[32m+[m[32m        "version.txt"[m
+[32m+[m[32m      ][m
+[32m+[m[32m    },[m
+[32m+[m[32m    "NETStandard.Library/2.0.3": {[m
+[32m+[m[32m      "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",[m
+[32m+[m[32m      "type": "package",[m
+[32m+[m[32m      "path": "netstandard.library/2.0.3",[m
+[32m+[m[32m      "files": [[m
+[32m+[m[32m        ".nupkg.metadata",[m
+[32m+[m[32m        "LICENSE.TXT",[m
+[32m+[m[32m        "THIRD-PARTY-NOTICES.TXT",[m
+[32m+[m[32m        "build/netstandard2.0/NETStandard.Library.targets",[m
+[32m+[m[32m        "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.AppContext.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Collections.Concurrent.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Collections.NonGeneric.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Collections.Specialized.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Collections.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.ComponentModel.Composition.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.ComponentModel.EventBasedAsync.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.ComponentModel.Primitives.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.ComponentModel.TypeConverter.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.ComponentModel.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Console.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Core.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Data.Common.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Data.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Diagnostics.Contracts.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Diagnostics.Debug.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Diagnostics.FileVersionInfo.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Diagnostics.Process.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Diagnostics.StackTrace.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Diagnostics.TextWriterTraceListener.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Diagnostics.Tools.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Diagnostics.TraceSource.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Diagnostics.Tracing.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Drawing.Primitives.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Drawing.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Dynamic.Runtime.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Globalization.Calendars.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Globalization.Extensions.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Globalization.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.Compression.FileSystem.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.Compression.ZipFile.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.Compression.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.FileSystem.DriveInfo.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.FileSystem.Primitives.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.FileSystem.Watcher.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.FileSystem.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.IsolatedStorage.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.MemoryMappedFiles.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.Pipes.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.UnmanagedMemoryStream.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.IO.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Linq.Expressions.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Linq.Parallel.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Linq.Queryable.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Linq.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.Http.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.NameResolution.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.NetworkInformation.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.Ping.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.Primitives.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.Requests.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.Security.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.Sockets.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.WebHeaderCollection.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.WebSockets.Client.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.WebSockets.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Net.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Numerics.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.ObjectModel.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Reflection.Extensions.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Reflection.Primitives.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Reflection.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Resources.Reader.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Resources.ResourceManager.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Resources.Writer.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.CompilerServices.VisualC.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.Extensions.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.Handles.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.InteropServices.RuntimeInformation.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.InteropServices.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.Numerics.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.Serialization.Formatters.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.Serialization.Json.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.Serialization.Primitives.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.Serialization.Xml.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.Serialization.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Runtime.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Security.Claims.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Security.Cryptography.Algorithms.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Security.Cryptography.Csp.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Security.Cryptography.Encoding.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Security.Cryptography.Primitives.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Security.Cryptography.X509Certificates.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Security.Principal.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Security.SecureString.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.ServiceModel.Web.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Text.Encoding.Extensions.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Text.Encoding.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Text.RegularExpressions.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Threading.Overlapped.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Threading.Tasks.Parallel.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Threading.Tasks.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Threading.Thread.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Threading.ThreadPool.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Threading.Timer.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Threading.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Transactions.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.ValueTuple.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Web.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Windows.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Xml.Linq.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Xml.ReaderWriter.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Xml.Serialization.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Xml.XDocument.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Xml.XPath.XDocument.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Xml.XPath.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Xml.XmlDocument.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Xml.XmlSerializer.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.Xml.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/System.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/mscorlib.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/netstandard.dll",[m
+[32m+[m[32m        "build/netstandard2.0/ref/netstandard.xml",[m
+[32m+[m[32m        "lib/netstandard1.0/_._",[m
+[32m+[m[32m        "netstandard.library.2.0.3.nupkg.sha512",[m
+[32m+[m[32m        "netstandard.library.nuspec"[m
+[32m+[m[32m      ][m
+[32m+[m[32m    }[m
+[32m+[m[32m  },[m
+[32m+[m[32m  "projectFileDependencyGroups": {[m
+[32m+[m[32m    ".NETCoreApp,Version=v2.1": [[m
+[32m+[m[32m      "Microsoft.NETCore.App >= 2.1.0"[m
+[32m+[m[32m    ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  "packageFolders": {[m
+[32m+[m[32m    "C:\\Users\\ASUS\\.nuget\\packages\\": {},[m
+[32m+[m[32m    "D:\\Microsoft\\Xamarin\\NuGet\\": {},[m
+[32m+[m[32m    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}[m
+[32m+[m[32m  },[m
+[32m+[m[32m  "project": {[m
+[32m+[m[32m    "version": "1.0.0",[m
+[32m+[m[32m    "restore": {[m
+[32m+[m[32m      "projectUniqueName": "D:\\проекты\\C# 2 сем\\LR_5\\LR_5.csproj",[m
+[32m+[m[32m      "projectName": "LR_5",[m
+[32m+[m[32m      "projectPath": "D:\\проекты\\C# 2 сем\\LR_5\\LR_5.csproj",[m
+[32m+[m[32m      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",[m
+[32m+[m[32m      "outputPath": "D:\\проекты\\C# 2 сем\\LR_5\\obj\\",[m
+[32m+[m[32m      "projectStyle": "PackageReference",[m
+[32m+[m[32m      "fallbackFolders": [[m
+[32m+[m[32m        "D:\\Microsoft\\Xamarin\\NuGet\\",[m
+[32m+[m[32m        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "configFilePaths": [[m
+[32m+[m[32m        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",[m
+[32m+[m[32m        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",[m
+[32m+[m[32m        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "originalTargetFrameworks": [[m
+[32m+[m[32m        "netcoreapp2.1"[m
+[32m+[m[32m      ],[m
+[32m+[m[32m      "sources": {[m
+[32m+[m[32m        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},[m
+[32m+[m[32m        "https://api.nuget.org/v3/index.json": {}[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "frameworks": {[m
+[32m+[m[32m        "netcoreapp2.1": {[m
+[32m+[m[32m          "projectReferences": {}[m
+[32m+[m[32m        }[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "warningProperties": {[m
+[32m+[m[32m        "warnAsError": [[m
+[32m+[m[32m          "NU1605"[m
+[32m+[m[32m        ][m
+[32m+[m[32m      }[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "frameworks": {[m
+[32m+[m[32m      "netcoreapp2.1": {[m
+[32m+[m[32m        "dependencies": {[m
+[32m+[m[32m          "Microsoft.NETCore.App": {[m
+[32m+[m[32m            "target": "Package",[m
+[32m+[m[32m            "version": "[2.1.0, )",[m
+[32m+[m[32m            "autoReferenced": true[m
+[32m+[m[32m          }[m
+[32m+[m[32m        },[m
+[32m+[m[32m        "imports": [[m
+[32m+[m[32m          "net461"[m
+[32m+[m[32m        ],[m
+[32m+[m[32m        "assetTargetFallback": true,[m
+[32m+[m[32m        "warn": true[m
+[32m+[m[32m      }[m
+[32m+[m[32m    }[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m

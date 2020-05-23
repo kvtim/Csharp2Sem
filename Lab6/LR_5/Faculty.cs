@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LR_5
 {
-    enum faculty
+    enum Faculty
     {
         KSIS,
         FITY,

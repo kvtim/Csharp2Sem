@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LR_5
 {
- interface IActionsWithStudents
+    interface IActionsWithStudents
     {
         bool PositiveAverageMark();
         void TransferFaculty(Faculty newFaculty);

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace LR_5
 {
@@ -14,7 +14,7 @@ namespace LR_5
             person[2] = new StudentSecialty(20, "Ivan", "Petrov", 119, 190, 4,
                  Faculty.FKP, "MiKPRS", 10, 5.6, "Vitebsk", 777, "Physical Culture");
 
-            ShowInfo(person);
+            //ShowInfo(person);
 
             Sort(person);
 

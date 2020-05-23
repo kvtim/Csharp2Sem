@@ -7,13 +7,13 @@ namespace LR_5
     class Student : Person
     {
         public int Course { get; set; }
-        public faculty Faculty { get; set; }
+        public Faculty Faculty { get; set; }
         public Student(int age, string name, string surname, int weight,
-            int height, int course, faculty faculty)
+            int height, int course, Faculty Faculty)
             : base(age, name, surname, weight, height)
         {
             this.Course = course;
-            this.Faculty = faculty;
+            this.Faculty = Faculty;
         }
         public static void Sort(StudentSecialty[] student, int parameter)
         {

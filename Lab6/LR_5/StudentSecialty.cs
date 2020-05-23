@@ -5,16 +5,16 @@ using System.Text;
 
 namespace LR_5
 {
-    class StudentSecialty : Student, IEquatable<StudentSecialty>, ISomeMethods
+    class StudentSecialty : Student, IEquatable<StudentSecialty>, IActionsWithStudents
     {
         private StudentInfo Info = new StudentInfo();
         public string Speciality { get; set; }
         public int SkippingHours { get; set; }
         public double AvarageMark { get; set; }
         public StudentSecialty(int age, string name, string surname, int weight,
-          int height, int course, Faculty faculty, string speciality, int skippingHours, double avarageMark,
+          int height, int course, Faculty Faculty, string speciality, int skippingHours, double avarageMark,
           string livePlace, int studyCost, string favoriteSubject)
-          : base(age, name, surname, weight, height, course, faculty)
+          : base(age, name, surname, weight, height, course, Faculty)
         {
             this.Speciality = speciality;
             this.SkippingHours = skippingHours;
