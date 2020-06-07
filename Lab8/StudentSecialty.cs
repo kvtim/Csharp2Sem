@@ -6,9 +6,12 @@ using System.Text;
 namespace LR_5
 {
     delegate bool AvarageMark(StudentSecialty student);
+    delegate void Add(ref StudentSecialty[] person);
+    delegate void AddMessage(string newStudent);
+
     class StudentSecialty : Student, IEquatable<StudentSecialty>, IActionsWithStudents
     {
-        public event AvarageMark PositiveAvarageMark;
+        public event AddMessage AddStudent;
 
         private StudentInfo Info = new StudentInfo();
         public string Speciality { get; set; }
@@ -27,7 +30,7 @@ namespace LR_5
             this.Info.FavoriteSubject = favoriteSubject;
         }
 
-        public AvarageMark allAvarageMark = (StudentSecialty student) => student.AvarageMark > 4;
+       static public AvarageMark allAvarageMark = (StudentSecialty student) => student.AvarageMark > 4;
 
         public bool Equals(StudentSecialty nextStudent)
         {
@@ -202,6 +205,11 @@ namespace LR_5
                         $" \n Live place: {Info.LivePlace} \n Study cost: {Info.StudyCost} \n Favorite subject: {Info.FavoriteSubject}"));
                     break;
             }
+        }
+        public void DoAdding(string message)
+        {
+            if (AddStudent != null)
+                AddStudent(message);
         }
     }
 }

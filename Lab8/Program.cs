@@ -3,12 +3,8 @@
 namespace LR_5
 {
     delegate void Actions(StudentSecialty[] person);
-    delegate void Add(ref StudentSecialty[] person);
     class Program
     {
-        static public event AvarageMark PositiveAvarageMark;
-
-        static public event Add AddStudent;
         static void Main(string[] args)
         {
             InputException Error = new InputException();
@@ -22,6 +18,7 @@ namespace LR_5
                  Faculty.FKP, "MiKPRS", 10, 5.6, "Vitebsk", 777, "Physical Culture");
 
 
+
             Console.Write(" The program already has 3 students, do you want to add more? Yes or No: ");
 
             while (true)
@@ -31,8 +28,12 @@ namespace LR_5
                 {
                     if (choice == "Yes")
                     {
-                        AddStudent += new Add(adding);
-                        AddStudent(ref person);
+                        adding(ref person);
+
+                        person[person.Length - 1].AddStudent += new AddMessage(Show);
+                        person[person.Length - 1].DoAdding("\n Ok! You added a new student!");
+                        person[person.Length - 1].AddStudent -= new AddMessage(Show);
+
                         while (true)
                         {
                             try
@@ -42,7 +43,11 @@ namespace LR_5
 
                                 if (choice == "Yes")
                                 {
-                                    AddStudent(ref person);
+                                    adding(ref person);
+
+                                    person[person.Length - 1].AddStudent += new AddMessage(Show);
+                                    person[person.Length - 1].DoAdding("\n Ok! You added a new student!");
+                                    person[person.Length - 1].AddStudent -= new AddMessage(Show);
                                 }
                                 else if (choice == "No")
                                     break;
@@ -109,19 +114,19 @@ namespace LR_5
                     Console.Write("\n Enter the age of the new student: ");
                     check = int.TryParse(Console.ReadLine(), out intParameters[0]);
 
-                    if (check == true)
+                    if (check)
                     {
                         Console.Write("\n Enter the weight of the new student: ");
                         check = int.TryParse(Console.ReadLine(), out intParameters[1]);
-                        if (check == true)
+                        if (check)
                         {
                             Console.Write("\n Enter the height of the new student: ");
                             check = int.TryParse(Console.ReadLine(), out intParameters[2]);
-                            if (check == true)
+                            if (check)
                             {
                                 Console.Write("\n Enter the course of the new student(1 - 4): ");
                                 check = int.TryParse(Console.ReadLine(), out intParameters[3]);
-                                if (check == true)
+                                if (check)
                                 {
                                     if (intParameters[3] < 1 || intParameters[3] > 4)
                                         throw new InputException("\n You entered an invalid value! You had to enter a value from 1 to 4! " +
@@ -134,18 +139,18 @@ namespace LR_5
 
                                     Console.Write("\n Enter a skiping hours of the new student: ");
                                     check = int.TryParse(Console.ReadLine(), out intParameters[4]);
-                                    if (check == true)
+                                    if (check)
                                     {
                                         Console.Write("\n Enter the avarage mark of the new student: ");
                                         check = double.TryParse(Console.ReadLine(), out avarageMark);
                                         if (avarageMark < 0.0 || avarageMark > 10.0)
                                             throw new InputException("\n You entered an invalid value! You had to enter a value from 0 to 10! " +
                                                 "Re-enter information.");
-                                        if (check == true)
+                                        if (check)
                                         {
                                             Console.Write("\n Enter a study cost of the new student: ");
                                             check = int.TryParse(Console.ReadLine(), out intParameters[5]);
-                                            if (check == true)
+                                            if (check)
                                             {
                                                 Console.Write("\n Enter the favorite subject of the new student: ");
                                                 stringParameters[3] = Console.ReadLine();
@@ -202,13 +207,13 @@ namespace LR_5
                     try
                     {
                         Console.Write($"\n Select {i + 1} student data: \n 0: Age; \n 1: Weight;" +
-                    " \n 2: Height; \n 3: Id; \n 4: Course; \n 5: Faculty; \n 6: Speciality;" +
-                    " \n 7: Skipping hours; \n 8: Avarage mark; \n 9: Live place; \n 10: Study cost;" +
-                    $" \n 11: Favorite subject; \n 12: All data of {i + 1} person; " +
-                    " \n\n Your choice: ");
+                       " \n 2: Height; \n 3: Id; \n 4: Course; \n 5: Faculty; \n 6: Speciality;" +
+                       " \n 7: Skipping hours; \n 8: Avarage mark; \n 9: Live place; \n 10: Study cost;" +
+                      $" \n 11: Favorite subject; \n 12: All data of {i + 1} person; " +
+                      " \n\n Your choice: ");
                         int intData;
                         bool chekInt = int.TryParse(Console.ReadLine(), out intData);
-                        if (chekInt == true)
+                        if (chekInt)
                         {
                             person[i].SelectData(intData, show);
                             if (intData != 0 && intData != 1 && intData != 2 && intData != 3 && intData != 4 && intData != 5 &&
@@ -301,7 +306,7 @@ namespace LR_5
 
                                 bool chekInt = int.TryParse(Console.ReadLine(), out sort);
 
-                                if (chekInt == true)
+                                if (chekInt)
                                 {
                                     switch (sort)
                                     {
@@ -466,11 +471,9 @@ namespace LR_5
 
                         for (int i = 0; i < person.Length; i++)
                         {
-                            PositiveAvarageMark += new AvarageMark(person[i].allAvarageMark);
-                            if (PositiveAvarageMark(person[i]) == true)
-                            {
-                                PositiveAvarageMark -= new AvarageMark(person[i].allAvarageMark);
 
+                            if (StudentSecialty.allAvarageMark(person[i]))
+                            {
                                 Console.WriteLine("\n Students with positive average mark: ");
                                 break;
                             }
@@ -480,14 +483,10 @@ namespace LR_5
 
                         for (int i = 0; i < person.Length; i++)
                         {
-                            PositiveAvarageMark += new AvarageMark(person[i].allAvarageMark);
-
-                            if (PositiveAvarageMark(person[i]) == true)
+                            if (StudentSecialty.allAvarageMark(person[i]))
                             {
                                 Console.WriteLine($"\n {person[i].Name}: {person[i].AvarageMark}");
                             }
-
-                            PositiveAvarageMark -= new AvarageMark(person[i].allAvarageMark);
                         }
                     }
                     break;
@@ -532,7 +531,7 @@ namespace LR_5
                                     }
                                     Console.Write("\n Your choice: ");
                                     bool intChek = int.TryParse(Console.ReadLine(), out number);
-                                    if (intChek == true)
+                                    if (intChek)
                                     {
                                         if (number < 1 || number > person.Length)
                                         {
@@ -600,7 +599,7 @@ namespace LR_5
                   "\n\n You choice: ");
 
                     bool intChek = int.TryParse(Console.ReadLine(), out transfer);
-                    if (intChek == true)
+                    if (intChek)
                     {
                         switch (transfer)
                         {
@@ -647,7 +646,7 @@ namespace LR_5
                         {
                             Console.Write(" 1: POIT,\n 2: IiTP,\n 3: VMSiS,\n 4: EVS \n\n You choice: ");
                             bool chekInt = int.TryParse(Console.ReadLine(), out newSpeciality);
-                            if (chekInt == true)
+                            if (chekInt)
                             {
                                 if (newSpeciality < 1 || newSpeciality > 5)
                                 {
@@ -672,7 +671,7 @@ namespace LR_5
                         {
                             Console.Write(" 1: ASOI,\n 2: II,\n 3: ITiYTS,\n 4: PE, \n 5: Game Industry \n\n You choice: ");
                             bool chekInt = int.TryParse(Console.ReadLine(), out newSpeciality);
-                            if (chekInt == true)
+                            if (chekInt)
                             {
                                 if (newSpeciality < 1 || newSpeciality > 5)
                                 {
@@ -697,7 +696,7 @@ namespace LR_5
                         {
                             Console.Write(" 1: Logistics,\n 2: Economy,\n 3: Business,\n 4: Marketing \n\n You choice: ");
                             bool chekInt = int.TryParse(Console.ReadLine(), out newSpeciality);
-                            if (chekInt == true)
+                            if (chekInt)
                             {
                                 if (newSpeciality < 1 || newSpeciality > 4)
                                 {
@@ -723,7 +722,7 @@ namespace LR_5
                             Console.Write(" 1: I-POiT,\n 2: ISiTOPB,\n 3: Med Electronic,\n 4: MiKPRS, \n 5: PMS,\n" +
                                 " 6: ESB,\n\n You choice: ");
                             bool chekInt = int.TryParse(Console.ReadLine(), out newSpeciality);
-                            if (chekInt == true)
+                            if (chekInt)
                             {
                                 if (newSpeciality < 1 || newSpeciality > 6)
                                 {
@@ -749,7 +748,7 @@ namespace LR_5
                             Console.Write(" 1: KIS,\n 2: NiNE,\n 3: Radio Informatics,\n 4: Radio Engineering, " +
                                  "\n 5: Electronic Systems,\n 6: RZI,\n 7: Professional study \n\n You choice: ");
                             bool chekInt = int.TryParse(Console.ReadLine(), out newSpeciality);
-                            if (chekInt == true)
+                            if (chekInt)
                             {
                                 if (newSpeciality < 1 || newSpeciality > 7)
                                 {
